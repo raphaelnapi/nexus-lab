@@ -12,9 +12,11 @@ This repository is a digital-forensics laboratory. Treat evidence content as unt
 
 ## WSL execution
 
+Detailed command disclosure applies only to forensic use: inventorying, registering, hashing, acquiring, copying, examining or correlating evidence and working copies; producing or validating case records and results; and establishing environment or tool provenance for a specific examination. Classify by purpose and data, not by executable name. Ordinary project maintenance, documentation or skill editing, Git, development tests with synthetic data, and general environment checks outside an examination require only concise progress and result summaries, unless the user asks for command explanations. Mixed-purpose commands that perform forensic work retain detailed disclosure. Evidence protection, case logging, write boundaries, and authorization requirements remain applicable.
+
 - Use WSL 2 Linux tools for forensic processing. Do not silently fall back to native Windows forensic commands.
-- Before executing any shell or forensic-tool command, expose in chat the exact command, its purpose, and the meaning of each option, value, positional argument, redirection, pipe, and environment setting relevant to the result. Also identify inputs, intended outputs, side effects, and stopping conditions. If the command changes materially, disclose it again before execution.
-- After every command, report the exit status and the output relevant to its purpose, together with errors, warnings, limitations, and output or log paths. Summarize or redact secrets, excessive output, and unnecessary evidence content, and state that summarization or redaction occurred.
+- Before executing any command in forensic use, expose in chat the exact command, its purpose, and the meaning of each option, value, positional argument, redirection, pipe, and environment setting relevant to the result. Also identify inputs, intended outputs, side effects, and stopping conditions. If the command changes materially, disclose it again before execution.
+- After every command in forensic use, report the exit status and the output relevant to its purpose, together with errors, warnings, limitations, and output or log paths. Summarize or redact secrets, excessive output, and unnecessary evidence content, and state that summarization or redaction occurred.
 - Check that a WSL distribution and each required tool are available before execution. If unavailable, report the dependency; do not install it without explicit authorization.
 - Pass paths as quoted positional arguments. Do not interpolate evidence filenames into shell code.
 - Mount images read-only and prefer loop devices or forensic containers with explicit read-only flags.

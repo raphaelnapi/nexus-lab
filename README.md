@@ -91,7 +91,9 @@ O catálogo [wsl-requirements.txt](wsl-requirements.txt) orienta a seleção de 
 | [hash_evidence.py](Lab/scripts/python/hash_evidence.py) | Ponto de entrada Python para cálculo de hashes de evidência. |
 | [install-wsl-tool.sh](Lab/scripts/install-wsl-tool.sh) | Instalação controlada de ferramenta após autorização específica. |
 
-Antes de executar qualquer comando, o agente deve apresentar o comando exato, explicar seus argumentos, identificar entradas, saídas, efeitos e condições de parada. Depois, deve informar o status de saída e os resultados relevantes, incluindo erros e limitações.
+Em uso pericial, antes de executar um comando, o agente deve apresentar o comando exato, explicar seus argumentos e identificar entradas, saídas, efeitos e condições de parada. Depois, deve informar o status de saída e os resultados relevantes, incluindo erros e limitações. Isso abrange inventário, registro, hashing, aquisição, cópia e exame de evidências, produção ou validação de registros e resultados de caso e verificações de ambiente destinadas à proveniência de um exame.
+
+Em manutenção do projeto, edição de documentação ou skills, operações Git, testes de desenvolvimento com dados sintéticos e verificações gerais de ambiente fora de um exame, a comunicação é resumida, sem explicar cada comando ou argumento, salvo solicitação do usuário. A finalidade e os dados determinam o enquadramento: comandos comuns de shell ou Python também podem ter uso pericial. Comandos que misturem manutenção e trabalho pericial continuam sujeitos à explicação detalhada. Os controles de preservação, registro, escrita e autorização permanecem aplicáveis.
 
 ## Fluxo de trabalho
 
