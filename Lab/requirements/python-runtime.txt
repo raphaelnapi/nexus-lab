@@ -1,0 +1,5 @@
+# Nexus-Lab Python runtime dependencies.
+#
+# The current reusable package uses only the Python standard library.
+# Add a dependency only when a script requires it, with explicit installation
+# authorization and a corresponding pinned entry in python-lock.txt.

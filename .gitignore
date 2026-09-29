@@ -1,0 +1,12 @@
+# Evidence and case data must never enter source control.
+/Evidence/**
+/Lab/cases/**
+/Lab/tools/**
+/Registry/**
+
+# Local runtime artifacts.
+__pycache__/
+*.py[cod]
+*.sqlite3-wal
+*.sqlite3-shm
+*.log

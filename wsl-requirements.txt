@@ -1,0 +1,51 @@
+# Nexus-Lab WSL forensic tool manifest v1
+# UTF-8; tab-separated fields. Lines beginning with # are comments.
+#
+# id<TAB>command<TAB>method<TAB>debian_package<TAB>category<TAB>profile<TAB>notes
+#
+# method=apt may be installed by Lab/scripts/install-wsl-tool.sh after explicit
+# authorization. method=manual is catalog-only and requires a separately
+# reviewed installation method, version, origin, and integrity check.
+# profile=base is broadly useful; profile=optional is installed only when the
+# evidence type and examination question justify it.
+file	file	apt	file	foundation	base	File-type identification by content
+sqlite3	sqlite3	apt	sqlite3	foundation	base	SQLite artifact inspection
+jq	jq	apt	jq	foundation	base	Structured JSON inspection
+sevenzip	7z	apt	p7zip-full	foundation	base	Archive inspection and extraction
+ripgrep	rg	apt	ripgrep	foundation	base	Fast bounded text search
+xxd	xxd	apt	xxd	foundation	base	Hexadecimal inspection
+binutils	strings	apt	binutils	foundation	base	Binary strings and object utilities
+sleuthkit	mmls	apt	sleuthkit	disk-filesystem	base	Partition and filesystem analysis (mmls fls icat fsstat)
+libewf	ewfinfo	apt	ewf-tools	disk-image	base	E01/Ex01 metadata and read-only mounting (ewfinfo ewfverify ewfmount)
+qemu-utils	qemu-img	apt	qemu-utils	disk-image	optional	Inspect and convert virtual-disk containers; conversion needs a case-scoped output
+libguestfs	guestfish	apt	libguestfs-tools	disk-filesystem	optional	Filesystem inspection; use explicit read-only options
+xmount	xmount	apt	xmount	disk-image	optional	Read-only virtual image translation
+afflib	affinfo	apt	afflib-tools	disk-image	optional	AFF image inspection and verification
+testdisk	testdisk	apt	testdisk	recovery	optional	Partition recovery and PhotoRec file carving; never target Evidence for output
+foremost	foremost	apt	foremost	recovery	optional	Signature-based file carving
+scalpel	scalpel	apt	scalpel	recovery	optional	Configurable signature-based file carving
+bulk-extractor	bulk_extractor	apt	bulk-extractor	artifact-extraction	optional	Bulk feature extraction without filesystem parsing
+hashdeep	hashdeep	apt	hashdeep	integrity	optional	Recursive hashing and hash-set comparison
+yara	yara	apt	yara	artifact-detection	optional	Rule-based byte-pattern matching; record rule source and hash
+exiftool	exiftool	apt	libimage-exiftool-perl	metadata	base	File metadata extraction
+poppler-pdf	pdfinfo	apt	poppler-utils	pdf-analysis	base	PDF metadata text images attachments and rendering utilities; transformations only on derived copies
+poppler-pdfsig	pdfsig	apt	poppler-utils	digital-signatures	base	Initial inspection and validation of embedded PDF signatures and certificates
+qpdf	qpdf	apt	qpdf	pdf-analysis	base	PDF structural checks object inspection decryption and transformations; output only to a derived copy
+mupdf	mutool	apt	mupdf-tools	pdf-analysis	optional	PDF object inspection rendering extraction and repair; repair changes document bytes
+ghostscript	gs	apt	ghostscript	pdf-transformation	optional	Render or rewrite PDF/PostScript only in case-scoped derived outputs; rewriting invalidates existing signatures
+tesseract	tesseract	apt	tesseract-ocr	pdf-ocr	optional	OCR engine for rendered pages; preserve language data versions and confidence limitations
+ocrmypdf	ocrmypdf	apt	ocrmypdf	pdf-ocr	optional	Create searchable derived PDFs; never replace an original or signed document
+openssl-cms	openssl	apt	openssl	digital-signatures	base	Inspect certificates timestamps and CMS/PKCS7 objects; trust and revocation require an explicit validation policy
+gnupg	gpg	apt	gnupg	digital-signatures	optional	Verify detached or embedded OpenPGP signatures with a recorded keyring and trust model
+xmlsec	xmlsec1	apt	xmlsec1	digital-signatures	optional	Verify XML Digital Signatures; use an explicit trust store and disable unintended network retrieval
+nss-certutil	certutil	apt	libnss3-tools	certificates	optional	Inspect and manage isolated NSS certificate databases; never alter a user or system trust store during examination
+pyhanko	pyhanko	manual	pyhanko	pdf-signatures	optional	Advanced PDF PAdES timestamp and incremental-update validation; pin version and isolate environment
+verapdf	verapdf	manual	verapdf	pdf-validation	optional	PDF/A and PDF/UA conformance validation; verify the official distribution and record validation profile
+hivex	hivexregedit	apt	hivex-utils	windows-artifacts	optional	Offline Windows Registry hive inspection
+reglookup	reglookup	apt	reglookup	windows-artifacts	optional	Windows Registry hive inspection
+adb	adb	apt	adb	mobile	optional	Android bridge; device acquisition requires separate authorization
+tcpdump	tcpdump	apt	tcpdump	network	optional	Packet capture and PCAP inspection; live capture requires separate authorization
+tshark	tshark	apt	tshark	network	optional	PCAP analysis; package configuration may prompt about capture privileges
+plaso	log2timeline.py	manual	plaso-tools	timeline	optional	Use the supported GIFT packaged release for the exact Ubuntu version
+volatility3	vol.py	manual	volatility3	memory	optional	Install in an isolated environment from the official project; pin and record version
+velociraptor	velociraptor	manual	velociraptor	endpoint-collection	optional	Verify official release signature/hash; collection or networking needs separate authorization

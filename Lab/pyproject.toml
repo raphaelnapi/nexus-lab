@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nexus-lab-tools"
+version = "0.1.0"
+description = "Reusable Python tooling for the Nexus-Lab forensic workspace"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+nexus-hash-evidence = "nexus_lab.evidence_hash:main"
+
+[tool.setuptools]
+package-dir = {"" = "python"}
+
+[tool.setuptools.packages.find]
+where = ["python"]

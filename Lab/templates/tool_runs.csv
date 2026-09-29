@@ -1,0 +1,1 @@
+tool_run_id,case_id,method_id,tool_name,tool_version,command_line,purpose,parameter_explanation,input_reference,input_sha256,output_path,output_summary,operator,started_at_utc,ended_at_utc,exit_status,stdout_log_path,stderr_log_path,limitations
