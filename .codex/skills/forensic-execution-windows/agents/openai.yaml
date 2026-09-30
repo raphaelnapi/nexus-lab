@@ -1,0 +1,7 @@
+interface:
+  display_name: "Forensic Execution for Windows"
+  short_description: "Run approved methods with provenance"
+  default_prompt: "Use $forensic-execution-windows to preflight and run this approved method on a verified working copy."
+policy:
+  allow_implicit_invocation: true
+

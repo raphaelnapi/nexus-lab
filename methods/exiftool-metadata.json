@@ -1,0 +1,20 @@
+{
+  "schema": "nexus-lab/method-pack/v2",
+  "method_id": "exiftool-metadata",
+  "version": "1.0.0",
+  "purpose": "Extract file metadata into a case-scoped JSON result without modifying the input.",
+  "question": "What metadata does ExifTool report for the selected verified working copy?",
+  "capability_id": "metadata",
+  "execution": {
+    "backend": "windows",
+    "timeout_seconds": 600,
+    "allowed_exit_codes": [0],
+    "input_zones": ["working-copies"],
+    "output_zones": ["analysis"],
+    "argument_patterns": ["^-json$", "^-G[0-9]?$", "^-a$", "^-u$", "^--$", "^[A-Za-z]:\\\\.*$"]
+  },
+  "authorization": {"administrator": false, "network": "none", "driver": false, "device_access": false},
+  "validation": {"reference": "tests/fixtures/metadata", "cross_check": "inspect selected source fields or a second parser"},
+  "limitations": ["Parser output is an observation about ExifTool processing.", "Metadata may be absent, malformed, duplicated, or format-dependent."]
+}
+

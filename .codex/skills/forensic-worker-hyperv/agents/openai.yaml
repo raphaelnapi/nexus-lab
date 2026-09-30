@@ -1,0 +1,6 @@
+interface:
+  display_name: "Forensic Hyper-V Worker"
+  short_description: "Run isolated Linux forensic jobs"
+  default_prompt: "Use $forensic-worker-hyperv to validate and plan this approved isolated worker job."
+policy:
+  allow_implicit_invocation: true

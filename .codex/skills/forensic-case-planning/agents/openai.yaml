@@ -1,0 +1,7 @@
+interface:
+  display_name: "Forensic Case Planning"
+  short_description: "Plan bounded, reviewable forensic cases"
+  default_prompt: "Use $forensic-case-planning to define the authority, scope, questions, gaps, and methods for this case."
+policy:
+  allow_implicit_invocation: true
+

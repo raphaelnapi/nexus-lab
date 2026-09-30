@@ -4,9 +4,15 @@
 /Lab/tools/**
 /Registry/**
 
+# Nexus-Lab v2 configuration and external-workspace pointers.
+/nexus-lab.config.json
+/.nexus-context.json
+
 # Local runtime artifacts.
 __pycache__/
 *.py[cod]
 *.sqlite3-wal
 *.sqlite3-shm
 *.log
+.pytest_cache/
+.coverage

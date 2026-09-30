@@ -1,0 +1,19 @@
+{
+  "schema": "nexus-lab/method-pack/v2",
+  "method_id": "plaso-timeline",
+  "version": "1.0.0",
+  "purpose": "Build a timeline in the isolated Hyper-V worker from a verified working copy.",
+  "question": "Which timestamped events are parsed within the selected Plaso coverage?",
+  "capability_id": "timeline",
+  "execution": {
+    "backend": "hyperv-worker",
+    "timeout_seconds": 86400,
+    "allowed_exit_codes": [0],
+    "input_zones": ["working-copies"],
+    "output_zones": ["timelines"],
+    "argument_patterns": ["^[A-Za-z0-9_./:=,+-]+$"]
+  },
+  "authorization": {"administrator": true, "network": "hyperv-internal", "driver": false, "device_access": false},
+  "validation": {"reference": "tests/fixtures/timeline", "cross_check": "underlying artifacts or an independent parser"},
+  "limitations": ["External networking is not authorized.", "Parser output does not by itself establish event occurrence or causality."]
+}

@@ -1,16 +1,10 @@
 ---
 name: forensic-reporting
-description: Produce a reviewable Nexus-Lab forensic report from registered WSL examination records. Use for technical findings and final reports; do not invent missing provenance or present hypotheses as facts.
+description: Produce or review a versioned Nexus-Lab v2 technical report from registered evidence, runs, artifacts, statements, findings, and reviews. Do not invent missing provenance or convert hypotheses into facts.
 ---
 
 # Forensic reporting
 
-Read [references/report-structure.md](references/report-structure.md) before drafting.
+Use only registered case records and attributed reported information. Trace every material statement through its source and preserve its epistemic state. Separate observations, derivations, inferences, alternatives, confidence, limitations, and conclusions.
 
-1. Use the case database, registered artifacts, attributed reported information, and preserved tool runs as sources. Never fill missing values from plausibility, templates, or model knowledge.
-2. State authority, scope, questions, evidence, integrity verification, environment, methods, and deviations.
-3. Preserve the epistemic state defined by `forensic-methodology`: reported, observed, derived, inferred, concluded, unknown, not observed, or not determined. Present observations separately from interpretations and conclusions.
-4. Cite evidence IDs, hashes, artifact IDs, precise locators, tool runs, and report attachments.
-5. Include alternative explanations, confidence, limitations, inaccessible data, errors, and negative results relevant to the question. State negative findings only within the recorded method coverage.
-6. Make the report independently reviewable without exposing secrets or unnecessary personal data.
-7. Hash the final report and register it as a generated file. Never claim ISO certification or legal admissibility.
+Use `New-NexusReport` to create a new version and `Export-NexusCaseManifest` for the accompanying manifest. Never overwrite an earlier report. State inaccessible data, parser errors, incomplete coverage, unresolved conflicts, and the limits of negative findings. Do not claim legal admissibility, certification, accreditation, or ISO conformity.

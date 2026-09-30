@@ -1,1 +1,0 @@
-evidence_id,case_id,parent_evidence_id,source_path,evidence_type,description,size_bytes,sha256,sha512,acquired_at_utc,verified_at_utc,write_protected,metadata_json

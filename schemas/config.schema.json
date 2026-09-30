@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nexus-lab.local/schemas/config-v2.json",
+  "title": "Nexus-Lab v2 configuration",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "repository_root", "evidence_root", "case_root", "tool_root"],
+  "properties": {
+    "schema": {"const": "nexus-lab/config/v2"},
+    "repository_root": {"type": "string", "minLength": 3},
+    "evidence_root": {"type": "string", "minLength": 3},
+    "case_root": {"type": "string", "minLength": 3},
+    "tool_root": {"type": "string", "minLength": 3},
+    "python_executable": {"type": "string", "default": "python"}
+  }
+}
+

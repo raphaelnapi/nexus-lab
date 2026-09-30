@@ -1,0 +1,20 @@
+{
+  "schema": "nexus-lab/method-pack/v2",
+  "method_id": "tshark-pcap-summary",
+  "version": "1.0.0",
+  "purpose": "Read an existing capture and emit a bounded protocol summary.",
+  "question": "Which protocol and endpoint summaries are reported in the selected PCAP?",
+  "capability_id": "pcap-analysis",
+  "execution": {
+    "backend": "windows",
+    "timeout_seconds": 1800,
+    "allowed_exit_codes": [0],
+    "input_zones": ["working-copies"],
+    "output_zones": ["analysis"],
+    "argument_patterns": ["^-r$", "^-q$", "^-z$", "^[a-z0-9,._:-]+$", "^[A-Za-z]:\\\\.*$"]
+  },
+  "authorization": {"administrator": false, "network": "none", "driver": false, "device_access": false},
+  "validation": {"reference": "tests/fixtures/pcap", "cross_check": "capinfos or Wireshark inspection"},
+  "limitations": ["No live capture is authorized by this method.", "Dissector support and preferences affect results."]
+}
+

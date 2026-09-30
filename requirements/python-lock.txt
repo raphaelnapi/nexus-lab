@@ -1,0 +1,2 @@
+# No third-party Python packages are required by the v2 core.
+# Development-only tools must be pinned and authorized separately.

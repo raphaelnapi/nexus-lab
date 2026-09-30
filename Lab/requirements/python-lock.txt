@@ -1,4 +1,0 @@
-# Nexus-Lab resolved Python dependency lock.
-#
-# No third-party packages are currently required. When dependencies are added,
-# record exact versions and hashes generated from an authorized, reviewed source.

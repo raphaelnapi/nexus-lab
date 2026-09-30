@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nexus-lab.local/schemas/method-pack-v2.json",
+  "title": "Nexus-Lab method pack",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "method_id", "version", "purpose", "question", "capability_id", "execution", "authorization", "validation", "limitations"],
+  "properties": {
+    "schema": {"const": "nexus-lab/method-pack/v2"},
+    "method_id": {"type": "string", "pattern": "^[a-z][a-z0-9-]+$"},
+    "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "purpose": {"type": "string", "minLength": 1},
+    "question": {"type": "string", "minLength": 1},
+    "capability_id": {"type": "string", "minLength": 1},
+    "execution": {
+      "type": "object",
+      "required": ["backend", "timeout_seconds", "allowed_exit_codes", "input_zones", "output_zones", "argument_patterns"],
+      "properties": {
+        "backend": {"enum": ["windows", "hyperv-worker"]},
+        "timeout_seconds": {"type": "integer", "minimum": 1, "maximum": 86400},
+        "allowed_exit_codes": {"type": "array", "items": {"type": "integer"}},
+        "input_zones": {"type": "array", "items": {"enum": ["working-copies", "derived"]}},
+        "output_zones": {"type": "array", "items": {"enum": ["staging", "extracted", "analysis", "timelines", "reports", "exports"]}},
+        "argument_patterns": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "authorization": {
+      "type": "object",
+      "required": ["administrator", "network", "driver", "device_access"],
+      "properties": {
+        "administrator": {"type": "boolean"},
+        "network": {"enum": ["none", "hyperv-internal", "external"]},
+        "driver": {"type": "boolean"},
+        "device_access": {"type": "boolean"}
+      }
+    },
+    "validation": {"type": "object"},
+    "limitations": {"type": "array", "items": {"type": "string"}}
+  }
+}

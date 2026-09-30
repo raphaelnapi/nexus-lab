@@ -1,4 +1,0 @@
-interface:
-  display_name: "WSL Forensic Tooling"
-  short_description: "Check and authorize WSL forensic dependencies"
-  default_prompt: "Use $wsl-forensic-tooling to check a required forensic tool and prepare a safe installation request if it is missing."

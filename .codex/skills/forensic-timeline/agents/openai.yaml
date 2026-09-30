@@ -1,0 +1,7 @@
+interface:
+  display_name: "Forensic Timeline"
+  short_description: "Build timelines with time semantics"
+  default_prompt: "Use $forensic-timeline to register and correlate these events without losing source time semantics."
+policy:
+  allow_implicit_invocation: true
+

@@ -1,0 +1,7 @@
+interface:
+  display_name: "Forensic Reporting"
+  short_description: "Create traceable versioned reports"
+  default_prompt: "Use $forensic-reporting to produce a versioned report from registered case records only."
+policy:
+  allow_implicit_invocation: true
+

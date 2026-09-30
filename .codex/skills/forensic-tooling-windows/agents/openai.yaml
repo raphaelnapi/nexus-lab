@@ -1,0 +1,7 @@
+interface:
+  display_name: "Forensic Tooling for Windows"
+  short_description: "Validate Windows forensic capabilities"
+  default_prompt: "Use $forensic-tooling-windows to check the required capability and prepare a safe validation or installation proposal."
+policy:
+  allow_implicit_invocation: true
+

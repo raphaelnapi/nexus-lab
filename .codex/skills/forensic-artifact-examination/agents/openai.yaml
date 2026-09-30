@@ -1,0 +1,7 @@
+interface:
+  display_name: "Forensic Artifact Examination"
+  short_description: "Examine bounded forensic artifact sets"
+  default_prompt: "Use $forensic-artifact-examination to choose and document a bounded method for these artifacts."
+policy:
+  allow_implicit_invocation: true
+

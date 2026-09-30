@@ -1,0 +1,16 @@
+{
+  "schema": "nexus-lab/validated-tools/v2",
+  "tools": [
+    {
+      "provider_id": "exiftool",
+      "tool_name": "ExifTool",
+      "version": "replace-with-reviewed-version",
+      "relative_path": "exiftool/exiftool.exe",
+      "binary_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "signature_status": "unsigned-reviewed",
+      "validated_at_utc": "replace-with-utc-timestamp",
+      "validation_reference": "replace-with-fixture-validation-record"
+    }
+  ]
+}
+

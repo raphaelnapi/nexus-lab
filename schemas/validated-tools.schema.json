@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nexus-lab.local/schemas/validated-tools-v2.json",
+  "title": "Validated Nexus-Lab tools",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "tools"],
+  "properties": {
+    "schema": {"const": "nexus-lab/validated-tools/v2"},
+    "tools": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["provider_id", "tool_name", "version", "relative_path", "binary_sha256", "signature_status", "validated_at_utc", "validation_reference"],
+        "properties": {
+          "provider_id": {"type": "string"},
+          "tool_name": {"type": "string"},
+          "version": {"type": "string"},
+          "relative_path": {"type": "string"},
+          "binary_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "signature_status": {"enum": ["valid", "unsigned-reviewed", "not-applicable"]},
+          "validated_at_utc": {"type": "string"},
+          "validation_reference": {"type": "string", "minLength": 1}
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,7 @@
+interface:
+  display_name: "Evidence Intake for Windows"
+  short_description: "Register and verify evidence safely"
+  default_prompt: "Use $evidence-intake-windows to register and verify this evidence without modifying the source."
+policy:
+  allow_implicit_invocation: true
+
